@@ -6,7 +6,7 @@ Live Site: [https://crypto-dashboard-sand-eight.vercel.app](https://crypto-dashb
 
 ## About the Project
 
-This app was built using React on the frontend and Node.js (with Express) on the backend. It pulls crypto market data from CoinGecko and stores user portfolio entries in a Supabase database. It’s designed to be fast, mobile-friendly, and easy to use.
+This app was built using React on the frontend and Node.js (with Express) on the backend. It pulls crypto market data from CoinGecko and stores user portfolio entries in a Supabase database. It uses Chart.js to graph your holdings and TailwindCSS for styling and animation. It’s designed to be fast, mobile-friendly, and easy to use.
 
 ## Target Browsers
 
@@ -70,6 +70,8 @@ Your backend exposes two main endpoints via Express:
 
 - `POST /api/portfolio/add`  
   Accepts JSON `{ coin, amount }` and inserts it into the Supabase database.
+
+These two endpoints were custom-authored in the Express backend and used by the frontend via fetch. 
 
 ### Known Bugs
 - You may need to wait 1–2 seconds after submitting an entry before it appears in the chart due to Render API cold start delays.
