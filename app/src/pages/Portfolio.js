@@ -41,18 +41,17 @@ export default function Portfolio() {
   async function handleSubmit(e) {
     e.preventDefault();
 
-    const res = await fetch('https://crypto-api-8sbj.onrender.com/api/portfolio/add', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ coin, amount }),
-    });
+    try {
+      await fetch('https://crypto-api-8sbj.onrender.com/api/portfolio/add', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ coin, amount }),
+      });
 
-    const result = await res.json();
-
-    if (Array.isArray(result) && result[0]?.coin) {
+      // Always refresh the portfolio after submitting
       await fetchPortfolio();
-    } else {
-      console.error('Insert failed or malformed response:', result);
+    } catch (err) {
+      console.error('Insert failed:', err);
     }
 
     setCoin('');
