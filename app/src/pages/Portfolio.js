@@ -26,7 +26,7 @@ export default function Portfolio() {
 
   const fetchPortfolio = async () => {
     try {
-      const res = await fetch('/api/portfolio');
+      const res = await fetch('https://crypto-api-8sbj.onrender.com/api/portfolio');
       const data = await res.json();
       setPortfolio(data);
     } catch (err) {
@@ -41,7 +41,7 @@ export default function Portfolio() {
   async function handleSubmit(e) {
     e.preventDefault();
 
-    const res = await fetch('/api/portfolio/add', {
+    const res = await fetch('https://crypto-api-8sbj.onrender.com/api/portfolio/add', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ coin, amount }),
