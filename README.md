@@ -22,9 +22,9 @@ This app works on all modern browsers:
 This section is for developers who want to run the app or maintain the project moving forward.
 
 ### Folder Structure
-crypto-dashboard/
-app/ <-React frontend
-server/ <-Express backend
+crypto-dashboard
+    app <-React frontend
+    server <-Express backend
 
 ### How to Install Locally
 
